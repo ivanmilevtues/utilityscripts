@@ -1,8 +1,10 @@
+# Run the simulator with: java -jar jsimured.exe
+
 network_pane ="network_pane.png"
 packets_pane = "packets_pane.png"
 results_pane = "1616870839364.png"
 
-win_button = 
+win_button = "win_button.png"
 
 csv_file_select="1616870859945.png"
 file_picker = "file_picker.png"
@@ -14,7 +16,7 @@ leng_buffers =["1616870950372.png","1616870916741.png","1616870926114.png","1616
 inject_channels=["1616870970877.png","1616870980028.png","1616870994672.png","1616871003602.png"]
 package_size = ["1616871049622.png","1616871058342.png","1616871070454.png","1616871080962.png"]
 
-broken_configs = [13]
+broken_configs = [13, 14, 15]
 
 
 def find_and_click(element):
