@@ -110,7 +110,7 @@ def none_if_same(new, old):
     return new if new != old else None
 
 def run_all_simulations():
-    init_config()
+    # init_config()
     simulation_id = 0
 
     for algorithm_id in range (3):
@@ -118,19 +118,27 @@ def run_all_simulations():
             for channel_id in range(4):
                 for package_size in range(4):
                     simulation_id += 1
-                    if simulation_id in broken_configs:
-                        continue
-                    if(simulation_id < start_from):
-                        continue
-                    setup_simulation(
-                        simulation_id,
-                        buffer_id,
-                        channel_id,
-                        package_size,
-                        algorithm_id
-                    )
-                    run_simulation()
+                    # if simulation_id in broken_configs:
+                    #     print("Simulator not working for: algorithm={0}, buffer={1}, channel={2}, package={3}".format(algorithms[algorithm_id], buffers[buffer_id], in_channel[channel_id], package_sizes[package_size]))
+                    # if(simulation_id < start_from):
+                    #     continue
+                    # setup_simulation(
+                    #     simulation_id,
+                    #     buffer_id,
+                    #     channel_id,
+                    #     package_size,
+                    #     algorithm_id
+                    # )
+                    # run_simulation()
+                    if algorithm_id == 2 and channel_id == 2 and package_size == 0:
+                        print("{0}.Simulator not working for: algorithm={1}, buffer={2}, channel={3}, package={4}".format(simulation_id, algorithms[algorithm_id], buffers[buffer_id], in_channel[channel_id], package_sizes[package_size]))
+algorithms = ['Dimension order (XY) for meshes (deterministic)', 'Duato based on (XY) for meshes (adaptive)', 'Fully adaptive for meshes(with deadlocks)']
 
+buffers = ['1', '2', '4', '8']
+
+in_channel = ['1', '2', '4', '8']
+
+package_sizes = ['32', '64', '128', '256']
 
 def init_config():
     find_and_click(network_pane)
